@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//->name('game_register');
+// Route関連
+Route::get('/route', 'RoutesController@get');
+Route::put('/route', 'RoutesController@evaluate');
+
+// Page関連
+Route::post('/page', 'PagesController@create');
+
+
