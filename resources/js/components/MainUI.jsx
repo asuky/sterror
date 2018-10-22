@@ -8,7 +8,7 @@ class MainUI extends Component {
         
         return (
                 <div>
-                    <TextDisplay />
+                    <TextDisplay props={ this.props } />
                 </div>
         );
         

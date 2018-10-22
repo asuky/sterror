@@ -1,7 +1,9 @@
 //import {  } from '../actions/actions';
 
 const initialState = {
-    
+    placeholder: "",
+    readonly: "true",
+    text: "Initialized"
 }
 
 export function TextDisplay (state = initialState, action) {

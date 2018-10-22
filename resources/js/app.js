@@ -12,7 +12,25 @@ const store = createStore(
     rootReducer
 );
 
+function mapStateToProps(state) {
+    return {
+        placeholder: state.TextDisplay.placeholder,
+        readonly: state.TextDisplay.readonly,
+        text: state.TextDisplay.text
+        
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {};
+}
+
+const AppContainer = connect(
+        mapStateToProps,
+        mapDispatchToProps
+)(MainUI);
+
 ReactDOM.render(
         <Provider store={store}>
-            <MainUI />
+            <AppContainer />
         </Provider>, document.getElementById('root'));
