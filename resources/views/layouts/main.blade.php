@@ -25,6 +25,11 @@
 </head>
 <body>
     <div id="app">
+        <nav class="navbar navbar-default navbar-expand-md navbar-light">
+            <div class="container">
+                    <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name') }}</a>
+            </div>
+        </nav>
 
         <main class="py-2">
             @yield('content')
