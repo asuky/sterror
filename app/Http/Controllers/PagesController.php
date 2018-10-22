@@ -18,6 +18,19 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     
+     /* [GET /] トップページ表示
+     * トップページを表示する
+     * 
+     * @access public
+     * @param void
+     * @return view index
+     * 
+     */
+    public function index()
+    {
+        return view('index');
+    }
+    
     /*
      * [POST /pages] ページ新規作成
      * ページの新規追加を実施する

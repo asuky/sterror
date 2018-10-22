@@ -11,12 +11,18 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 
 //->name('game_register');
+
+// Index部分
+Route::get('/', 'PagesController@index');
+
+
 // Route関連
 Route::get('/route', 'RoutesController@get');
 Route::put('/route', 'RoutesController@evaluate');
