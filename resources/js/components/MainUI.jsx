@@ -5,10 +5,16 @@ import TextDisplay from './TextDisplay';
 class MainUI extends Component {
     
     render() {
-        
+        console.log(this.props);
         return (
                 <div>
-                    <TextDisplay props={ this.props } />
+                    <TextDisplay
+                        placeholder={ this.props.placeholder }
+                        readonly={ this.props.readonly }
+                        text={ this.props.text }
+                        forward={ this.props.forward }
+                        backward={ this.props.backward }
+                    />
                 </div>
         );
         

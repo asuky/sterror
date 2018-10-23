@@ -5,26 +5,41 @@ import { Provider, connect } from 'react-redux';
 
 import rootReducer from './reducers/reducers';
 import createSagaMiddleware from 'redux-saga';
+import allSagas from './sagas/sagas';
 
 import MainUI from './components/MainUI';
 
+import { loadStory } from './actions/actions';
+
+const sagaMiddlewares = createSagaMiddleware();
 const store = createStore(
-    rootReducer
+    rootReducer,
+    applyMiddleware(sagaMiddlewares)
 );
+
+sagaMiddlewares.run(allSagas, store.dispatch);
 
 function mapStateToProps(state) {
     return {
         placeholder: state.TextDisplay.placeholder,
         readonly: state.TextDisplay.readonly,
-        text: state.TextDisplay.text
-        
+        text: state.TextDisplay.text,
+        handleClick: state.TextDisplay.canClick
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    return {};
+    return {
+        forward: (props) => {
+            dispatch(forwardPage());
+        },
+        backward: (props) => {
+            dispatch(backwardPage());
+        }
+    };
 }
 
+store.dispatch(loadStory());
 const AppContainer = connect(
         mapStateToProps,
         mapDispatchToProps
