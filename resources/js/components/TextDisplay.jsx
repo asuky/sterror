@@ -29,7 +29,8 @@ class TextDisplay extends Component {
                 className={'form-control'}
                 placeholder={ this.props.placeholder }
                 readOnly={ this.props.readonly }
-                defaultValue={ this.props.text }
+                
+                value={ this.props.text }
                 onClick={ (e)=>this.onClick(e, this.props) }
                 onContextMenu={ (e)=>this.onClick(e, this.props) }>
             </textarea>

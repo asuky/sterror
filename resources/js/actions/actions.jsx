@@ -1,7 +1,7 @@
 export const LOADING='LOADING';
 export const STORY_LOADED='STORY_LOADED';
 export const FORWARD_PAGE='FORWARD_PAGE';
-export const BACKWARD_PAGE='FORWARD_PAGE';
+export const BACKWARD_PAGE='BACKWARD_PAGE';
 
 export function loadStory() {
     return {
@@ -28,6 +28,7 @@ export function forwardPage() {
 export function backwardPage() {
     return {
         type: BACKWARD_PAGE
+        
         
     }
 }
