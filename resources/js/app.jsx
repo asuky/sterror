@@ -9,9 +9,10 @@ import allSagas from './sagas/sagas';
 
 import MainUI from './components/MainUI';
 
-import { loadStory } from './actions/actions';
+import { loadStory, forwardPage, backwardPage } from './actions/actions';
 
 const sagaMiddlewares = createSagaMiddleware();
+
 const store = createStore(
     rootReducer,
     applyMiddleware(sagaMiddlewares)
@@ -24,7 +25,7 @@ function mapStateToProps(state) {
         placeholder: state.TextDisplay.placeholder,
         readonly: state.TextDisplay.readonly,
         text: state.TextDisplay.text,
-        handleClick: state.TextDisplay.canClick
+        canClick: state.TextDisplay.canClick
     };
 }
 
@@ -40,6 +41,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 store.dispatch(loadStory());
+
 const AppContainer = connect(
         mapStateToProps,
         mapDispatchToProps

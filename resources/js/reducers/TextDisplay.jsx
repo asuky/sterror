@@ -1,12 +1,12 @@
 //import {  } from '../actions/actions';
-import { LOADING, STORY_LOADED } from '../actions/actions';
+import { LOADING, STORY_LOADED, FORWARD_PAGE, BACKWARD_PAGE } from '../actions/actions';
 
 const initialState = {
     placeholder: "",
-    readonly: false,
+    readonly: true,
     text: "",
     canClick: false,
-    index: -1
+    index: 0
 }
 
 export function TextDisplay (state = initialState, action) {
@@ -14,8 +14,20 @@ export function TextDisplay (state = initialState, action) {
     switch (action.type) {
         
         case STORY_LOADED:
+            return Object.assign({}, state, {
+                canClick: true
+            });
             
-            return state;
+        case FORWARD_PAGE:
+            return Object.assign({}, state, {
+                
+            });
+            
+        case BACKWARD_PAGE:
+            return Object.assign({}, state, {
+                canClick: true
+            });
+            
         default:
             return state;
     }
