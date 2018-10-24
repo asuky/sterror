@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import TextDisplay from './TextDisplay';
 
+import TextDisplay from './TextDisplay';
+import PromptDisplay from './PromptDisplay';
 
 class MainUI extends Component {
     
@@ -14,6 +15,15 @@ class MainUI extends Component {
                         canClick={ this.props.canClick }
                         forward={ this.props.forward }
                         backward={ this.props.backward }
+                    />
+                    <PromptDisplay
+                        showDecision={ this.props.showDecision }
+                        instruction={ this.props.instruction }
+                        isRead={ this.props.isRead }
+                        onYes={ this.props.onYes }
+                        onNo={ this.props.onNo }
+                        onEdit={ this.props.onEdit }
+                        onQuit={ this.props.onQuit }
                     />
                 </div>
         );

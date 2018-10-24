@@ -10,12 +10,10 @@ class TextDisplay extends Component {
         
         if (mouseButton === 1) {
             // 左のとき
-            console.log("Forward Page");
            props.forward();
             
         } else if (mouseButton === 3){
             // 右のとき
-            console.log("Backward Page");
             props.backward();
             
         } else {
