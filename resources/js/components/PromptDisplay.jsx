@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 
 class PromptDisplay extends Component {
     
-    onYes(e, props) {
-        //dispatch affirmative post
-        
-    }
-    
     onNo(e, props) {
         // edit mode
     }
@@ -33,7 +28,7 @@ class PromptDisplay extends Component {
             <div className={ this.props.promptClass }>
                 <p>Question</p>
                 <button onClick={ (e)=>this.props.onYes() }>Yes</button>
-                <button onClick={ (e)=>this.onNo(e, this.props) }>No</button>
+                <button onClick={ (e)=>this.props.onNo(e, this.props) }>No</button>
             </div>
             );
         } else {

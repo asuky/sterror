@@ -23,16 +23,21 @@ export function storyLoaded(story) {
     };
 }
 
-export function forwardPage() {
+export function forwardPage(text) {
     return {
-        type: FORWARD_PAGE
-        
+        type: FORWARD_PAGE,
+        payload: {
+            text: text
+        }
     }
 }
 
-export function backwardPage() {
+export function backwardPage(text) {
     return {
-        type: BACKWARD_PAGE
+        type: BACKWARD_PAGE,
+        payload: {
+            text: text
+        }
         
     }
 }

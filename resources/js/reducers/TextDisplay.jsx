@@ -18,13 +18,14 @@ const initialState = {
 }
 
 export function TextDisplay (state = initialState, action) {
-
+    
     switch (action.type) {
         
+       
         case STORY_LOADED:
             return Object.assign({}, state, {
                 story: action.payload.story,
-                appriciated_story: action.payload.story,
+                original_story: action.payload.story,
                 text: action.payload.story[0],
                 canClick: true
             });
@@ -32,6 +33,10 @@ export function TextDisplay (state = initialState, action) {
         case FORWARD_PAGE:
             // index が story の配列長より小さいなら、index を1つ増やす
             if ( state.story.length-1 > state.index) {
+
+                let modified_story = state.story;
+                modified_story[state.index] = action.payload.text;
+                console.log(modified_story);
                 
                 // index が story の配列長に到達＝一度目に全部読んだとき
                 // 評価を表示する
@@ -65,8 +70,9 @@ export function TextDisplay (state = initialState, action) {
             
         // 修正可能モード
         case IMPROVE_STORY:
-        
-            return state;
+            return Object.assign({}, state, {
+                readonly: false
+            });
             
         case EDIT_STORY:
             return state;

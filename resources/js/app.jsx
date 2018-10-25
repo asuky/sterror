@@ -44,11 +44,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        forward: (props) => {
-            dispatch(forwardPage());
+        forward: (text) => {
+            dispatch(forwardPage(text));
         },
-        backward: (props) => {
-            dispatch(backwardPage());
+        backward: (text) => {
+            dispatch(backwardPage(text));
         },
         onYes: (props) => {
             dispatch(appriciateStory());
