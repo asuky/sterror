@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider, connect } from 'react-redux';
 import { createLogger } from 'redux-logger';
 
@@ -20,10 +20,11 @@ import {
 
 const sagaMiddlewares = createSagaMiddleware();
 const logger = createLogger();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(sagaMiddlewares, logger)
+    composeEnhancers(applyMiddleware(sagaMiddlewares, logger))
 );
 
 sagaMiddlewares.run(allSagas, store.dispatch);

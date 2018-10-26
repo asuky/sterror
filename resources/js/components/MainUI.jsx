@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import AppBar from '@material-ui/core/AppBar';
+
 import TextDisplay from './TextDisplay';
 import PromptDisplay from './PromptDisplay';
 
@@ -8,6 +10,7 @@ class MainUI extends Component {
     render() {
         return (
                 <div>
+                    <AppBar>Story Terror</AppBar>
                     <TextDisplay
                         placeholder={ this.props.placeholder }
                         readonly={ this.props.readonly }

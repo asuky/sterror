@@ -21,6 +21,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
     <!-- Styles -->
 @if(app('env') == 'dev')
@@ -37,23 +38,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-expand-md navbar-light">
-            <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name') }}</a>
-            </div>
-        </nav>
-
-        <main class="py-2">
-            @yield('content')
-        </main>
-        
-        <footer class="footer">
-            <div class="container">
-                <p class="text-muted text-center">2018</p>
-            </div>
-        </footer>
-    </div>
+<main class="py-2">
+    @yield('content')
+</main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>

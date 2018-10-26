@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Button from '@material-ui/core/Button';
+
 class PromptDisplay extends Component {
     
     onNo(e, props) {
@@ -27,8 +29,8 @@ class PromptDisplay extends Component {
             return(
             <div className={ this.props.promptClass }>
                 <p>Question</p>
-                <button onClick={ (e)=>this.props.onYes() }>Yes</button>
-                <button onClick={ (e)=>this.props.onNo(e, this.props) }>No</button>
+                <Button variant="contained" color="primary" onClick={ (e)=>this.props.onYes() }>Yes</Button>
+                <Button variant="contained" color="primary" onClick={ (e)=>this.props.onNo(e, this.props) }>No</Button>
             </div>
             );
         } else {
